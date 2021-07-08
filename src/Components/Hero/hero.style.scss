@@ -1,0 +1,89 @@
+.hero {
+  padding: 1.8rem 1.1rem;
+  background: #1e213a;
+  color: #fff;
+  // Weather Header
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-button,
+    &-location {
+      box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.198);
+    }
+    &-button {
+      font-size: 1.6rem;
+      font-weight: 500;
+      padding: 1.1rem 1.8rem;
+      background: #6e707a;
+      color: #fff;
+    }
+    &-location {
+      cursor: pointer;
+      padding: 0.9rem;
+      border-radius: 50%;
+      background: #6e707a;
+    }
+  }
+  // Weather Info
+  &-weather {
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // Stats
+    &-icon {
+      max-width: 150px;
+    }
+    &-degree {
+      margin-top: 4rem;
+      &-num {
+        font-size: 14.4rem;
+        line-height: 170px;
+        font-weight: 500;
+      }
+      &-icon {
+        font-size: 5.8rem;
+        color: #a09fb1;
+      }
+    }
+    // Status
+    &-status {
+      margin-top: 2.3rem;
+      font-size: 3.6rem;
+      color: #a09fb1;
+      font-weight: 600;
+      line-height: 42px;
+    }
+    // Date
+    &-date {
+      * {
+        color: #88869d;
+      }
+      margin-top: 4.8rem;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 16px;
+    }
+    // Location
+    &-location {
+      color: #88869d;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      margin-top: 3.2rem;
+      margin-bottom: 10.5rem;
+      gap: 9px;
+    }
+  }
+  @media (min-width: 70em) {
+      min-height: 100vh;
+      max-width: 459px;
+      &-weather {
+        &-location {
+          margin-bottom: unset;
+        }
+      }
+  }
+}

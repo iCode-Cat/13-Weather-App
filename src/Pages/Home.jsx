@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
-import Main from '../Components/Main/Main';
-
+import React, { Fragment } from "react";
+import Main from "../Components/Main/Main";
+import WeatherContext from "../Context/WeatherContext";
 const Home = () => {
   return (
-    <Fragment>
+    <WeatherContext>
       <Main />
-    </Fragment>
+    </WeatherContext>
   );
 };
 
