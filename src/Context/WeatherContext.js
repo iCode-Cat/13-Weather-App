@@ -2,33 +2,36 @@ import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const WeatherProvider = createContext();
-
 const WeatherContext = (props) => {
-  const [city, setCity] = useState('kiev');
+  let [city, setCity] = useState('New York');
   const [woeid, setWoeId] = useState(null);
   const [foreCast, setForeCast] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const getWoeid = async () => {
+  const getWoeid = async (id) => {
     if (!city) return;
-    const url = `https://cors-anywhere.herokuapp.com/metaweather.com/api/location/search/?query=${city}`;
+    setLoading(false);
+    city = city.toLocaleLowerCase();
+    const url = `http://localhost:8080/metaweather.com/api/location/search/?query=${city}`;
     try {
       const get = await axios.get(url);
+      if (get.data.length < 1) {
+        return;
+      }
       const woeId = get.data[0].woeid;
       setWoeId(woeId);
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
   const getWeatherInfo = async () => {
+    console.log(true);
     if (woeid === null) return;
-    // let weeklyForeCast;
-    // let cityName;
-    // let todayDate;
     let data;
     try {
       const get = await axios.get(
-        `https://cors-anywhere.herokuapp.com/www.metaweather.com/api/location/${woeid}/`,
+        `http://localhost:8080/www.metaweather.com/api/location/${woeid}/`,
       );
       data = get.data;
       const { time, title, consolidated_weather } = data;
@@ -37,6 +40,7 @@ const WeatherContext = (props) => {
         title,
         consolidated_weather,
       });
+      setLoading(true);
     } catch (error) {
       console.log(error.response);
     }
@@ -51,7 +55,7 @@ const WeatherContext = (props) => {
   }, [woeid]);
 
   return (
-    <WeatherProvider.Provider value={{ foreCast, setCity }}>
+    <WeatherProvider.Provider value={{ foreCast, setCity, loading }}>
       {props.children}
     </WeatherProvider.Provider>
   );

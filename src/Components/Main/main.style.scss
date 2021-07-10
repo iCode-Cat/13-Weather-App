@@ -1,0 +1,29 @@
+.weather-details {
+  background: var(--clr-navyDark);
+  min-height: 100vh;
+  color: #ffffff;
+  background: #100e1d;
+ 
+}
+
+.weather-wrapper {
+  background: blue;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.main {
+  &-article {
+    display: grid;
+    grid-template-columns: unset;
+  }
+  @media (min-width: 60em) {
+    .weather-details {
+        padding: 0 15rem;
+    }
+    &-article {
+      display: grid;
+      grid-template-columns: 0fr 1fr;
+    }
+  }
+}

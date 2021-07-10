@@ -1,0 +1,16 @@
+.highlights {
+    margin-top: 5.1rem;
+    padding: 0 2.1rem;
+    &-header {
+        font-weight: 700;
+        font-size: 2.4rem;
+    }
+    &-wrapper {
+        margin-top: 3.2rem;
+        display: grid;
+        gap: 32px;
+        h1 {
+            background: red;
+        }
+    }
+}
