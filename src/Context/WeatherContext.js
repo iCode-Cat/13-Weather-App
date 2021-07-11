@@ -15,7 +15,7 @@ const WeatherContext = (props) => {
     if (!city) return;
     setLoading(false);
     city = city.toLocaleLowerCase();
-    const url = `http://localhost:8080/metaweather.com/api/location/search/?query=${city}`;
+    const url = `https://weather-api-33323.herokuapp.com/metaweather.com/api/location/search/?query=${city}`;
     try {
       const get = await axios.get(url);
       if (get.data.length < 1) {
@@ -36,7 +36,7 @@ const WeatherContext = (props) => {
     let data;
     try {
       const get = await axios.get(
-        `http://localhost:8080/www.metaweather.com/api/location/${woeid}/`
+        `https://weather-api-33323.herokuapp.com/www.metaweather.com/api/location/${woeid}/`
       );
       data = get.data;
       const { time, title, consolidated_weather } = data;
