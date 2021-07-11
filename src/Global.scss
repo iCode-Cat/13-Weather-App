@@ -1,18 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;600;700&display=swap');
 
 :root {
   --clr-navy: #1e213a;
   --clr-navyDark: #100e1d;
   --clr-blue: #3c47e9;
 
-  --size-tab:11px;
+  --size-tab: 11px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -35,4 +35,16 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  color: #a09fb1;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }

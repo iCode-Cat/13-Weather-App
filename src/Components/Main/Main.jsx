@@ -12,6 +12,7 @@ const Main = () => {
         <section className='weather-details'>
           <Weekly />
           <Highlights />
+          <p className='footer'>created by iCode-Cat - devChallenges.io</p>
         </section>
       </article>
     </main>

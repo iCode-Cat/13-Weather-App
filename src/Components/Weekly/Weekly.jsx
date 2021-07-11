@@ -1,55 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WeatherProvider } from '../../Context/WeatherContext';
 import './weekly.style.scss';
-const testObject = [
-  {
-    date: 'today',
-    icon: 'Clear',
-    maxTemp: 16,
-    minTemp: 10,
-  },
-  {
-    date: 'today',
-    icon: 'Hail',
-    maxTemp: 16,
-    minTemp: 10,
-  },
-  {
-    date: 'today',
-    icon: 'Snow',
-    maxTemp: 16,
-    minTemp: 10,
-  },
-  {
-    date: 'today',
-    icon: 'Showers',
-    maxTemp: 16,
-    minTemp: 10,
-  },
-  {
-    date: 'today',
-    icon: 'Clear',
-    maxTemp: 16,
-    minTemp: 10,
-  },
-];
 
-const WeeklyBox = ({ date, icon, maxTemp, minTemp }) => {
+const WeeklyBox = ({ min_temp, max_temp, icon, applicable_date }) => {
   return (
     <div className='weekly-box-wrapper'>
-      <p className='weekly-box header'>{date}</p>
+      <p className='weekly-box header'>{applicable_date}</p>
       <img src={icon + '.png'} alt='weather-icon' className='weekly-box icon' />
       <div className='weekly-box degree-minmax'>
-        <p className='weekly-box max-degree'>{maxTemp + '°C'}</p>
-        <p className='weekly-box min-degree'>{minTemp + '°C'}</p>
+        <p className='weekly-box max-degree'>{max_temp + '°C'}</p>
+        <p className='weekly-box min-degree'>{min_temp + '°C'}</p>
       </div>
     </div>
   );
 };
 
 const Weekly = () => {
+  const { weekly } = useContext(WeatherProvider);
   return (
     <article className='weekly-box-container'>
-      {testObject.map((weather, index) => (
+      {weekly.map((weather, index) => (
         <WeeklyBox key={index} {...weather} />
       ))}
     </article>

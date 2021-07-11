@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import './search.style.scss';
 
 const Search = ({ tab, setTab, setCity }) => {
-  const [samples, setSamples] = useState([
+  const [samples] = useState([
     {
       city: 'London',
     },

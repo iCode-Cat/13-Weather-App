@@ -1,16 +1,94 @@
-.highlights {
-    margin-top: 5.1rem;
-    padding: 0 2.1rem;
-    &-header {
-        font-weight: 700;
-        font-size: 2.4rem;
+.highlight {
+  &-wrapper {
+    margin-top: 3.2rem;
+    margin-bottom: 4rem;
+    display: grid;
+    gap: 32px;
+    h1 {
+      background: red;
     }
+  }
+  margin-top: 5.1rem;
+  padding: 0 2.1rem;
+  &-header {
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+
+  // Highlight Box Settings
+  &-box {
+    * {
+      color: #e7e7eb;
+    }
+    display: grid;
+    text-align: center;
+    gap: 6px;
+    padding: 2.2rem 2rem 3rem 2rem;
+    background: var(--clr-navy);
+  }
+  &-title {
+    text-align: center;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  &-value {
+    margin-top: 1.1rem;
+    line-height: 75px;
+    font-size: 6.4rem;
+    font-weight: 700;
+  }
+  &-unit {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 42px;
+    margin-left: 0.5rem;
+  }
+  @media (min-width: 70em) {
+    padding: unset;
+  }
+  @media (min-width: 50em) {
     &-wrapper {
-        margin-top: 3.2rem;
-        display: grid;
-        gap: 32px;
-        h1 {
-            background: red;
-        }
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+
+// Progress bar
+.wind {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: 185px;
+  margin-top: 1.2rem;
+  &-value {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    * {
+      color: #a09fb1;
+      font-weight: 700;
+    }
+  }
+  &-unit {
+    text-align: end;
+    line-height: 14px;
+    color: #a09fb1;
+    margin-top: 6px;
+    font-weight: 700;
+  }
+}
+
+.direction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    transform-origin: center;
+    background: hsla(0, 0%, 100%, 0.3);
+    margin-right: 6px;
+  }
 }

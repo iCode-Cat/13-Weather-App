@@ -10,6 +10,9 @@
     padding: unset;
     grid-template-columns: repeat(5, 1fr);
   }
+  @media (min-width: 70em) {
+    padding: unset;
+  }
 }
 .weekly-box-wrapper {
   display: flex;

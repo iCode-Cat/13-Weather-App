@@ -1,9 +1,10 @@
 .weather-details {
+  display: flex;
+  flex-direction: column;
   background: var(--clr-navyDark);
   min-height: 100vh;
   color: #ffffff;
   background: #100e1d;
- 
 }
 
 .weather-wrapper {
@@ -17,13 +18,18 @@
     display: grid;
     grid-template-columns: unset;
   }
-  @media (min-width: 60em) {
+  @media (min-width: 70em) {
     .weather-details {
-        padding: 0 15rem;
+      padding: 0 2rem;
     }
     &-article {
       display: grid;
       grid-template-columns: 0fr 1fr;
+    }
+  }
+  @media (min-width: 90em) {
+    .weather-details {
+      padding: 0 10rem;
     }
   }
 }
